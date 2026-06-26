@@ -1,0 +1,117 @@
+[
+  {
+    "article_id": 25,
+    "source": "36氪",
+    "title": "主题圆桌：我们永远赞美冒险 更早、更小、更下水｜36氪WAVES2026新浪潮",
+    "category": "创业/商业",
+    "textrank_summary": "投早投小的时候，投科技的时候，其实会有很多技术路线，所以我们作为早期投资人，其实常常会面临在六七种技术路线里面到底怎么去选，我相信在座几位嘉宾可能也有发生过，某一种路线我们投了之后发现被绕过去了，想请现场各位嘉宾分享一下自己有没有这样被绕过去的时刻，我们当时投了项目之后，后来怎么消化在投资上的情绪的？陆海涛：谢谢四位嘉宾，这个问题我总结一下，我们作为早期投资人可能担心的不是压错路线，而担心我们投的创始人是不是整个行业里最优秀，最有潜力的创始人，这可能是我们最关心的。陆海涛：刚才提到的案例各位嘉宾没有直接说名字，下一个大家可以直接说项目的名字，因为这个问题是说大家有没有在整个职业生涯里面，在市场没有那么共识的时候，当时投了这样一个项目，事实证明你投资决策的那个时间点可能是充满了非常大的不确定性，但是最后这一笔投资又带来非常好的回报的，我们可以简单来复盘一下。",
+    "llm_summary_short": "在36氪WAVES2026大会上，多位投资人围绕天使轮项目展开讨论。他们分享了自己机构的投资理念和经验，并指出当前市场对早期项目的资金投入不足，同时强调了投早、投小的重要性及风险控制的必要性。",
+    "llm_summary_long": "在36氪WAVES2026大会的主题圆桌中，多位投资人围绕天使轮项目展开深入讨论。真格基金的刘元、山行资本的徐诗、明势创投的徐之浩以及卓源亚洲的林海卓分享了各自机构的投资理念和经验。他们指出，在当前市场环境下，天使轮项目的资金投入不足，尤其是国资LP占据主导地位，给早期投资带来了挑战。投资人强调需要投早、投小，并且要控制风险。此外，嘉宾们还讨论了技术周期与资本周期的错配问题，以及如何在快速变化的技术环境中寻找并支持有潜力的创业项目。",
+    "scores": {
+      "textrank": {
+        "fluency": "5",
+        "coverage": "2",
+        "conciseness": "2",
+        "notes": "选到了对话内容，遗漏主要信息"
+      },
+      "llm": {
+        "fluency": "4",
+        "coverage": "5",
+        "conciseness": "4",
+        "notes": "讲的挺清晰了，内容覆盖面不错"
+      }
+    }
+  },
+  {
+    "article_id": 29,
+    "source": "36氪",
+    "title": "美光的好财报，黄金的坏消息",
+    "category": "创业/商业",
+    "textrank_summary": "对于投资者而言，AI链牛市稳定兑现超额收益，赚钱效应远超震荡走弱的黄金，使得原本配置黄金用于对冲组合风险的资金，持续转向科技成长赛道追逐更高收益，全球黄金ETF已连续多月出现净流出，进一步放大了金价的下行压力。在全球AI链整体资本开支加码、持续扩产能的背景下，供给端的紧张会仍会持续到2027年以后，待到2028年后供给有所边际改善，AI长期的强劲需求也会对整个行业形成一定的托底，AI产业的景气周期因此被拉长，成长逻辑下AI链的牛市行情也将因此而持续。一方面，当前AI链的强资金虹吸效应，持续分流市场存量流动性，叠加市场开始一致看空黄金，在赚钱效应的驱动下，大量配置黄金的资金陆续撤离，并涌入高景气的科技成长赛道。",
+    "llm_summary_short": "美光科技发布好财报，股价暴涨，A股算力、半导体等AI链板块随之上涨。然而，在全球AI链牛市的同时，黄金价格却持续走软。文章分析了资金从传统行业流向科技成长赛道的原因，并探讨了利率对不同资产的影响。",
+    "llm_summary_long": "存储巨头美光科技发布超预期财报，股价暴涨，带动A股算力、半导体等AI链板块上涨；与此同时，全球AI链牛市与黄金价格的下跌形成鲜明对比。文章分析指出，资金正从传统行业流向科技成长赛道，这不仅是因为AI链基本面强劲和高景气周期带来的超额收益，还因为股票上涨引发的赚钱效应促使投资者加仓相关资产。此外，美债长端利率走高对各大类资产普遍形成压制，但AI链与黄金走势相反，反映了在高收益预期下，利率风险被部分抵消。",
+    "scores": {
+      "textrank": {
+        "fluency": "5",
+        "coverage": "5",
+        "conciseness": "5",
+        "notes": "提炼到了文章的关键点，有吸引力"
+      },
+      "llm": {
+        "fluency": "5",
+        "coverage": "5",
+        "conciseness": "5",
+        "notes": "对科技趋势总结的到位"
+      }
+    }
+  },
+  {
+    "article_id": 8,
+    "source": "Hacker News",
+    "title": "IBM debuts sub-1 nanometer chip technology",
+    "category": "AI/科技",
+    "textrank_summary": "YORKTOWN HEIGHTS, NY, June 25, 2026 – IBM (NYSE: IBM) today unveiled a major semiconductor breakthrough with the introduction of the world’s first sub-1 nanometer (nm) chip technology, featuring a revolutionary transistor architecture at the 0.To produce this chip, IBM researchers developed an entirely new transistor architecture, called “nanostack,” the industry’s first known three-dimensional, nanosheet-based design.- IBM's sub-1 nanometer node chip.",
+    "llm_summary_short": "IBM 推出全球首个亚1纳米芯片技术，使用创新的三维纳米堆叠结构，显著提升了计算能力和能源效率。该技术有望推动人工智能和云计算等领域的发展，并标志着半导体行业进入原子尺度时代。",
+    "llm_summary_long": "IBM 在2026年6月25日宣布推出全球首款亚1纳米芯片技术，采用革命性的晶体管架构，在7埃节点实现了突破。新芯片在指甲大小的面积上集成了近100亿个晶体管，性能提升50%，能效提高70%。该技术通过垂直堆叠和交错排列晶体管，利用3D顺序集成实现更高的密度，并允许每个层使用不同的材料组合以优化每种晶体管的性能和效率。IBM 表示这一创新将继续引领下一代技术，并为计算新时代奠定基础。",
+    "scores": {
+      "textrank": {
+        "fluency": "5",
+        "coverage": "4",
+        "conciseness": "5",
+        "notes": "提取到了关键信息"
+      },
+      "llm": {
+        "fluency": "5",
+        "coverage": "5",
+        "conciseness": "5",
+        "notes": "技术指标，时间，内容提取的都很好"
+      }
+    }
+  },
+  {
+    "article_id": 14,
+    "source": "Hacker News",
+    "title": "The Doorman's Fallacy in action",
+    "category": "创业/商业",
+    "textrank_summary": "I recently learned about the Doorman Fallacy and couldn't help but connect it to an experience I had last weekend.Personally, I'm not a fan of this trend, because it forces me to take out my phone when I'd rather be present with the people I'm with.I couldn't believe it.",
+    "llm_summary_short": "文章描述了一次使用二维码点餐的经历，指出虽然技术可以降低成本，但可能会牺牲用户体验。作者认为在某些场景下，人工服务仍然不可或缺。",
+    "llm_summary_long": "作者通过自己的一次用餐经历，详细描述了使用二维码代替纸质菜单和支付过程中遇到的问题。这些不便包括多次扫码失败、停车提醒打断用餐氛围以及结账时的混乱。文章指出，在追求成本节约的同时，技术的应用可能会降低用户体验。作者认为在某些情况下，人工服务仍然是不可替代的。",
+    "scores": {
+      "textrank": {
+        "fluency": "5",
+        "coverage": "4",
+        "conciseness": "5",
+        "notes": "直接点出文章情景"
+      },
+      "llm": {
+        "fluency": "5",
+        "coverage": "4",
+        "conciseness": "5",
+        "notes": "提炼的能力很不错"
+      }
+    }
+  },
+  {
+    "article_id": 27,
+    "source": "36氪",
+    "title": "8点1氪丨苹果宣布上调iPad及Mac价格；黄仁勋计划把50%或更多现金流返还股东；OpenAI发布首款AI芯片",
+    "category": "创业/商业",
+    "textrank_summary": "36氪获悉，6月25日收盘，美股三大指数涨跌不一，纳指跌0.1%，高于4月的3.6月25日，IBM宣布在半导体技术领域取得重大突破，推出了全球首款“亚纳米”（sub-1nm）芯片工艺技术。",
+    "llm_summary_short": "苹果宣布上调iPad及Mac产品价格以应对成本上涨。英伟达CEO黄仁勋表示将把更多自由现金流返还给股东，并推出物理AI概念。OpenAI与博通联合发布了首款定制AI芯片Jalapeño，专为大规模语言模型设计。这些消息反映了科技公司在面对市场变化时的不同策略。",
+    "llm_summary_long": "苹果公司宣布上调iPad及Mac产品价格，以应对内存和存储芯片成本的持续上涨。英伟达CEO黄仁勋在股东大会上表示，将把50%或更多自由现金流返还给股东，并强调了物理AI作为下一波增长浪潮的重要性。此外，OpenAI与博通联合发布了首款定制AI芯片Jalapeño，专为大规模语言模型设计，旨在提升AI运行速度与可靠性并降低使用门槛。这些动态展示了科技公司在面对市场挑战时的不同策略和方向。",
+    "scores": {
+      "textrank": {
+        "fluency": "5",
+        "coverage": "5",
+        "conciseness": "5",
+        "notes": "简明扼要，很吸引眼球"
+      },
+      "llm": {
+        "fluency": "4",
+        "coverage": "5",
+        "conciseness": "5",
+        "notes": "抓住了信息的重点，对用户体验来说很好"
+      }
+    }
+  }
+]

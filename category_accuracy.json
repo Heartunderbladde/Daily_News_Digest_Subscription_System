@@ -1,0 +1,202 @@
+[
+  {
+    "article_id": 19,
+    "source": "Hacker News",
+    "title": "Experiments in Sports Seismology for the World Cup",
+    "one_sentence": "PNSN在Seattle Stadium部署地震传感器记录世界杯期间球迷活动。",
+    "content_preview": "Experiments in Sports Seismology for the World Cup\nRecently, PNSN welcomed a camera crew from Football Case Study to the SeismoLab to provide seismological context for their portrait of Lumen Field—which is now transforming to “Seattle Stadium” to host six World Cup matches in Seattle. Watch it here:\nOur field crew installed six seismic sensors throughout the stadium back in January, ahead of the ",
+    "system_category": "其他",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 94,
+    "source": "Hacker News",
+    "title": "22-year-old Mozart's handwritten notebook unearthed in 'major discovery'",
+    "one_sentence": "法国国家图书馆发现了一本248年前属于莫扎特的笔记本，被认为是重大发现。",
+    "content_preview": "On Air Now\nClassic FM Breakfast with Dan Walker 6:30am - 9am\n19 June 2026, 12:31\nThe notebook was confiscated during the French Revolution, and has now been found in Paris.\nA 248-year-old notebook in France’s National Library (BnF) has been officially identified as belonging to a 22-year-old Mozart, in what library experts have called a “major discovery”.\nConsisting of 44 pages, the notebook was k",
+    "system_category": "其他",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 7,
+    "source": "Hacker News",
+    "title": "A game where you're an OS and have to manage processes, memory and I/O events",
+    "one_sentence": "这是一款模拟操作系统的游戏，玩家需要管理进程、内存和I/O事件。",
+    "content_preview": "This is a game where you are the operating system of a computer. As such, you have to manage processes, memory and I/O events. Make sure not to leave processes idling for too long, or the user will get really impatient and reboot you!\nYou can play the game here: https://plbrault.github.io/youre-the-os\nAlso available on itch.io.\n- Python 3.14\n- The project is not guaranteed to work with other versi",
+    "system_category": "编程/技术",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 1,
+    "source": "Hacker News",
+    "title": "Om Malik has died",
+    "one_sentence": "Om Malik，科技行业知名作家、摄影师及投资者，于2026年6月24日在斯坦福医院去世。",
+    "content_preview": "Om Malik is a San Francisco based writer, photographer and investor. Read More\nOm Malik, 1966-2026\nOm Malik passed away on June 24, 2026, at Stanford Hospital after a long health journey with his heart. He was surrounded by family and friends.\nWe invite you to share your remembrances of Om in the comments below or by posting and tagging his accounts on X/Twitter, Instagram, Threads, or LinkedIn.\nT",
+    "system_category": "其他",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 35,
+    "source": "36氪",
+    "title": "港股智谱股价跌破2000港元",
+    "one_sentence": "港股智谱股价跌破2000港元，跌幅超15%。",
+    "content_preview": "36氪获悉，港股智谱股价跌破2000港元，现跌超15%。\n36氪获悉，天眼查App显示，近日，盖世食品（苏州）有限公司成立，法定代表人为盖泉泓，注册资本3000万人民币，经营范围包括食品生产、食品销售、食品进出口、食用农产品初加工等。股东信息显示，该公司由盖世食品、金龙鱼共同持股。\n49分钟前\n突发：苹果深夜大涨价，黄牛疯狂囤货，iPhone 18危险了\n8点1氪丨苹果宣布上调iPad及Mac价格；黄仁勋计划把50%或更多现金流返还股东；OpenAI发布首款AI芯片\n推送和解读前沿、有料的科技创投资讯\n一级市场金融信息和系统服务提供商\n聚焦全球优秀创业者，项目融资率接近97%，领跑行业",
+    "system_category": "创业/商业",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 26,
+    "source": "36氪",
+    "title": "布局下一代人机交互与具身数据入口，「念象科技」完成近千万元天使轮融资｜36氪首发",
+    "one_sentence": "「念象科技」完成近千万元天使轮融资，专注非侵入式神经接口技术研发。",
+    "content_preview": "布局下一代人机交互与具身数据入口，「念象科技」完成近千万元天使轮融资｜36氪首发\n文｜胡香赟\n编辑｜海若镜\n36氪获悉，专注非侵入式神经接口技术研发与产业化的「念象科技」已完成近千万元天使轮融资。本轮融资由永珺星芒领投，浦东创投、一村资本跟投，募集资金主要用于产品研发、团队扩建、本土sEMG数据集建设。\n念象科技成立于2025年底，首款产品Omniband是一款腕戴式表面肌电（surface electromyography，简称sEMG）神经接口设备。它不直接采集大脑皮层信号，而是通过手腕处的神经肌肉电信号，解析手部运动意图和连续动态手势，进而用于手机、电脑、智能眼镜、智能家居等终端的人机交互。\n除泛交互场景外，念象科技也将高精度手部运动数据视为另一条长期价值线。团队希望围绕手部姿态、肌肉发力、物体交互等标签，建设面向本土手部操作场景的大规模sEMG数据集，为具身智能、物理AI和世界模型",
+    "system_category": "创业/商业",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 18,
+    "source": "Hacker News",
+    "title": "The last Romans are still around",
+    "one_sentence": "文章讨论了罗马帝国的后裔，如罗马尼亚人和罗曼什人，以及他们如何延续罗马文化与身份。",
+    "content_preview": "For some of us, our Roman Empire actually is the Roman Empire. As far as pre-modern states go, the Roman Empire was incredibly powerful, culturally influential, and well documented. Rome’s expansion shaped Europe, and Europe’s shaped the world.\nSo when did the Romans stop being a thing? Definitions are as always tough, but they kind of never did. Even though the Roman state stopped functioning ove",
+    "system_category": "其他",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 4,
+    "source": "Hacker News",
+    "title": "What happened after 2k people tried to hack my AI assistant",
+    "one_sentence": "作者通过 hackmyclaw.com 实验测试其 AI 助手 Fiu 的安全性，结果显示秘密未泄露。",
+    "content_preview": "What happened after 2,000 people tried to hack my AI assistant\nI built hackmyclaw.com, where anyone could email Fiu, my OpenClaw assistant, and try to make it leak the contents of a secrets.env file.\nAfter reaching the front page of Hacker News, Fiu received more than 6,000 emails from over 2,000 people trying to break it.\nThe secrets never leaked.\nThe setup\nI enjoy using OpenClaw and Hermes, but ",
+    "system_category": "AI/科技",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 15,
+    "source": "Hacker News",
+    "title": "OS9Map",
+    "one_sentence": "OS9Map 是一个可以在 Mac OS 9 上浏览 OpenStreetMap 的工具。",
+    "content_preview": "OS9Map\nOS9Map lets you browse OpenStreetMap on Mac OS 9. Search for landmarks and addresses, and save the places you care about as bookmarks for next time.\nRequirements\n- Mac OS 9\n- PowerPC processor\n- 16 MB RAM (32 MB or more recommended)\n- An internet connection (Open Transport TCP/IP)\nFeatures\n- Smooth scrolling map canvas — drag with the mouse to pan; nearby tiles load as you go.\n- Place searc",
+    "system_category": "编程/技术",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 44,
+    "source": "Hacker News",
+    "title": "We All Depend on Open Source. We Will Defend It Together",
+    "one_sentence": "全球多家科技公司联手推出Akrites计划，旨在共同修复开源软件中的漏洞，应对人工智能加速的威胁。",
+    "content_preview": "We All Depend on Open Source. We Will Defend It Together.\nAn open letter regarding the launch of Akrites – a coordinated effort to remediate vulnerabilities in the open source software the world runs on\nFor decades, open source has been one of the great achievements of technology – software we built together and came to depend on completely. Today, this code underpins the world’s critical infrastr",
+    "system_category": "AI/科技",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 24,
+    "source": "36氪",
+    "title": "年入27亿，一颗中国糖果拿捏「美国味」",
+    "one_sentence": "中国糖果品牌阿麦斯通过创新产品打入北美市场，年收入达27亿元，但面临关税、渠道风险及本土市场的挑战。",
+    "content_preview": "年入27亿，一颗中国糖果拿捏「美国味」\n作者 | 谢芸子\n编辑 | 张帆\n在TikTok国际版，一条关于果汁剥皮软糖皮乐士Peelerz的测评视频，共获得点赞量258万。皮乐士Peelerz是阿麦斯Amos旗下的主打品牌。\n走进美国的Costco或山姆会员店，阿麦斯几乎是货架上仅有的中国糖果。欧美会员店的选品口碑“回流”至国内。\n打开中国山姆APP，阿麦斯旗下的两款产品Peelerz与“贝欧宝Biobor活性益生菌软糖”，位列“糖果热销榜单”第一、第二，月销量分别超过20万件及10万件。\n品牌势能的积累在资本市场爆发。\n不久前，阿麦斯向港交所递交招股书。据其援引的弗若斯特沙利文数据，按2025年零售额计算，阿麦斯是中国最大的糖果公司。若顺利过会，阿麦斯也将摘下“中国糖果第一股”的头衔。\n但细看招股书，一个更复杂的故事浮出水面：这家年收入27亿元的中国糖果大王，一半以上的营收来自北美，本土市",
+    "system_category": "创业/商业",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 34,
+    "source": "36氪",
+    "title": "意大利反垄断机构对微软展开调查",
+    "one_sentence": "意大利反垄断机构调查微软涉嫌在提价过程中未充分告知消费者相关信息。",
+    "content_preview": "意大利反垄断机构周五表示，已对微软展开调查，因其在“Microsoft 365”订阅服务提价过程中涉嫌存在不正当商业行为。该监管机构称，微软并未充分告知消费者其“Microsoft 365”服务已接入人工智能工具Copilot和Designer。除非消费者主动选择不升级，否则系统会自动将其切换至收费更高的订阅套餐；同时平台提供的相关信息有限，消费者难以判断是否要续约。（新浪财经）原文链接\n36氪获悉，港股智谱股价跌破2000港元，现跌超15%。\n33分钟前\n突发：苹果深夜大涨价，黄牛疯狂囤货，iPhone 18危险了\n8点1氪丨苹果宣布上调iPad及Mac价格；黄仁勋计划把50%或更多现金流返还股东；OpenAI发布首款AI芯片\n推送和解读前沿、有料的科技创投资讯\n一级市场金融信息和系统服务提供商\n聚焦全球优秀创业者，项目融资率接近97%，领跑行业",
+    "system_category": "创业/商业",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 12,
+    "source": "Hacker News",
+    "title": "Why are we so obsessed with lawns?",
+    "one_sentence": "文章探讨了草坪在园林设计中的重要性及其文化意义。",
+    "content_preview": "It is arguable that, for all our other achievements in the sphere of gardening, the most important and iconic contribution of British horticulture to the world is the lawn. Lawns possess obvious appeal as an element in landscape design. Of all soft landscaping features, they are by far the most tolerant of wear. This means they can bridge the huge chasm in practicality between the severe utility o",
+    "system_category": "其他",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 37,
+    "source": "36氪",
+    "title": "沪深两市成交额超3万亿",
+    "one_sentence": "沪深两市成交额突破3万亿元，广东粤财信托有限公司增资。",
+    "content_preview": "36氪获悉，沪深两市成交额超3万亿。\n36氪获悉，天眼查App显示，近日，广东粤财信托有限公司发生工商变更，注册资本由62亿人民币增至约73.3亿人民币，增幅约18%。该公司成立于1985年3月，法定代表人为莫敏秋，由广东粤财投资控股有限公司、广东省科技创业投资有限公司共同持股。\n1小时前\n突发：苹果深夜大涨价，黄牛疯狂囤货，iPhone 18危险了\n8点1氪丨苹果宣布上调iPad及Mac价格；黄仁勋计划把50%或更多现金流返还股东；OpenAI发布首款AI芯片\n推送和解读前沿、有料的科技创投资讯\n一级市场金融信息和系统服务提供商\n聚焦全球优秀创业者，项目融资率接近97%，领跑行业",
+    "system_category": "创业/商业",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 3,
+    "source": "Hacker News",
+    "title": "Libre Barcode Project",
+    "one_sentence": "Libre Barcode Project 提供了生成不同格式条形码的字体工具。",
+    "content_preview": "Libre Barcode Project\nLibre Barcode fonts enable you to write barcodes in the\nformats, with or without text below the code. Visit the individual pages for usage instructions and further information.\nThe Code 128 Encoder is historically located at this URL and it stays here to not break existing links to it. It is also included in the Code 128 page.\nCode 128 Encoder\nIf it can be encoded with Code 1",
+    "system_category": "编程/技术",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 9,
+    "source": "Hacker News",
+    "title": "Un-0: Generating Images with Coupled Oscillators",
+    "one_sentence": "Un-0 是一个基于耦合振子的新型图像生成系统，展示了物理计算在 AI 领域的应用潜力。",
+    "content_preview": "June 25, 2026\nModel Release\nIntroducing Un-0: Generating Images with Coupled Oscillators\nWritten by:\nTL;DR. Executing deep neural networks on GPUs has dominated AI for a decade, but we think the next jump in energy efficiency demands a fundamentally different computer, one where physics does the computing. We built Un-0, an image generator powered by a simulated system of coupled oscillators, an e",
+    "system_category": "AI/科技",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 8,
+    "source": "Hacker News",
+    "title": "IBM debuts sub-1 nanometer chip technology",
+    "one_sentence": "IBM 发布了全球首款亚1纳米芯片技术，采用革命性的晶体管架构，性能提升50%，能效提高70%。",
+    "content_preview": "All press releases\nIBM Debuts World’s First Sub-1 Nanometer Chip Technology\nYORKTOWN HEIGHTS, NY, June 25, 2026 – IBM (NYSE: IBM) today unveiled a major semiconductor breakthrough with the introduction of the world’s first sub-1 nanometer (nm) chip technology, featuring a revolutionary transistor architecture at the 0.7 nm, or 7 angstrom node. The achievement marks a landmark moment for an industr",
+    "system_category": "AI/科技",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 17,
+    "source": "Hacker News",
+    "title": "Zig's new bitCast semantics and LLVM back end improvements",
+    "one_sentence": "Zig 编译器的 SPIR-V 后端进行了多项改进，包括引入新的 @SpirvType 内置函数、更新调用约定以携带执行模式信息等。",
+    "content_preview": "Devlog\nThis page contains a curated list of recent changes to main branch Zig.\nAlso available as an RSS feed.\nThis page contains entries for the year 2026. Other years are available in the Devlog archive page.\nSPIR-V Backend Progress\nAuthor: Ali Cheraghi\nThere’s quite a bit to cover. The SPIR-V backend had bitrotted in a number of places after the recent compiler changes, so I spent the past sever",
+    "system_category": "编程/技术",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 10,
+    "source": "Hacker News",
+    "title": "Show HN: OpenKnowledge – open source AI-first alternative to Obsidian/Notion",
+    "one_sentence": "OpenKnowledge 是一个开源的 AI 驱动的笔记编辑器，支持与 Claude、Codex 等工具集成。",
+    "content_preview": "OpenKnowledge is a beautiful, local-first markdown editor and LLM wiki with integrations for Claude, Codex, and other harnesses.\nAvailable as macOS app or Web app/CLI for Linux, Windows, Intel Mac.\nKey highlights:\n- Full WYSIWYG so that editing markdown files feels like editing a Google Doc or Notion page.\n- Collaborative AI-editing with Claude, Codex, and Cursor desktop apps. Can be used with any",
+    "system_category": "AI/科技",
+    "human_category": "",
+    "is_correct": "yes"
+  },
+  {
+    "article_id": 20,
+    "source": "Hacker News",
+    "title": "You can't unit test for taste",
+    "one_sentence": "作者在开发跑步应用时，使用GeoNames数据集和Python等工具构建了一个兴趣点处理管道，并讨论了项目规划和技术选择。",
+    "content_preview": "You can't unit test for taste\nI’m building In the Long Run where runners do virtual runs on famous routes around the world. The app tallies up your Strava mileage and plots your total distance as progress against country- or continent-spanning routes. The intention is to provide long-term inspiration and motivation; life is a marathon, not a sprint. You can have a bad month or season but still mak",
+    "system_category": "编程/技术",
+    "human_category": "",
+    "is_correct": "yes"
+  }
+]

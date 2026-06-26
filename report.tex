@@ -1,0 +1,396 @@
+% !TEX program = XeLaTeX
+% 每日资讯摘要订阅系统 — 课程设计报告
+% 深度学习与自然语言处理 — 课程设计（题目 4）
+
+\documentclass[12pt,a4paper]{ctexart}
+
+% --- 页面设置 ---
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue,
+}
+
+% --- 标题 ---
+\title{\textbf{每日资讯摘要订阅系统}\\[6pt]
+       \large 深度学习与自然语言处理 — 课程设计（题目 4）}
+\author{姓名：\_\_\_\_\_\_ \quad 学号：\_\_\_\_\_\_ \\[4pt]
+        组员：\_\_\_\_\_\_ \quad 学号：\_\_\_\_\_\_}
+\date{2026 年 6 月}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+% ============================================================
+\section{选题背景与目标}
+% ============================================================
+
+\subsection{问题背景}
+
+在信息爆炸的时代，用户每天面临海量新闻资讯，难以高效获取真正有价值的内容。传统的 RSS 阅读器仅做信息聚合，缺乏智能摘要和自动分类能力。用户不得不花费大量时间逐篇浏览，信息过载已成为现代人的普遍痛点。
+
+自动文本摘要技术正是解决这一问题的关键。当前主流方案分为两条技术路线：一是\textbf{抽取式摘要}——从原文中直接选取关键句拼接成摘要，以 TextRank 算法为代表；二是\textbf{生成式摘要}——由模型理解原文后重新组织语言生成摘要，以 Transformer 架构的大语言模型为代表。两种方案各有优劣：抽取式忠实于原文但缺乏概括能力；生成式灵活自然但可能引入事实偏差。
+
+\subsection{项目目标}
+
+本项目构建一个端到端的每日资讯摘要订阅系统，实现以下核心功能：
+
+\begin{enumerate}[label=(\arabic*),nosep]
+    \item \textbf{多源抓取}：自动从 Hacker News API 和 36氪 RSS 获取每日资讯，利用 trafilatura 提取正文
+    \item \textbf{双方案摘要}：实现 TextRank 抽取式（自实现）和 LLM 生成式（Qwen2.5:7B）两种摘要方案
+    \item \textbf{自动分类}：利用 LLM 将文章归入四类——AI/科技、创业/商业、编程/技术、其他
+    \item \textbf{多长度档位}：支持一句话摘要、约 100 字短摘要、约 200 字详细摘要
+    \item \textbf{Web 展示}：基于 Streamlit 构建可交互界面，支持按日期回顾、按分类筛选、摘要方案对比
+    \item \textbf{量化评估}：使用 ROUGE-L 指标和人工评分对两种摘要方案进行对比
+\end{enumerate}
+
+\subsection{涉及课程知识}
+
+本项目综合运用了本学期 NLP 课程中多个模块的知识，具体对应关系如表~\ref{tab:knowledge} 所示。
+
+\begin{table}[H]
+\centering
+\caption{课程知识在本项目中的应用}
+\label{tab:knowledge}
+\small
+\begin{tabular}{ll}
+\toprule
+\textbf{课程模块} & \textbf{对应实现} \\
+\midrule
+词向量 / TF-IDF   & TextRank 句子向量化，计算句子间相似度 \\
+Seq2Seq / Attention & Qwen2.5 生成式摘要的底层架构原理 \\
+Transformer       & 大语言模型的核心架构，理解 LLM 工作机制 \\
+Prompt Engineering & 设计 System Prompt 控制分类与摘要输出格式 \\
+结构化输出        & LLM 按 JSON 格式输出 \{category, summaries\}，便于下游解析 \\
+工程实践          & 模块化架构、SQLite 持久化、Streamlit 前端 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\section{相关技术介绍}
+% ============================================================
+
+\subsection{TextRank 抽取式摘要}
+
+TextRank 算法由 Mihalcea 和 Tarau 于 2004 年提出\cite{textrank}，其核心思想源自 Google 的 PageRank 算法\cite{pagerank}：将文本中的句子视为图的节点，句子之间的语义相似度作为边权重，通过迭代计算每个句子的重要性得分，最后选取得分最高的若干句子按原文顺序排列形成摘要。
+
+算法流程分为五个步骤：
+
+\begin{enumerate}[label=步骤 \arabic*:,nosep]
+    \item \textbf{分句}：按中英文标点（句号、问号、感叹号等）将原文切分为句子列表
+    \item \textbf{分词}：使用 jieba 对每个句子进行中文分词，同时过滤停用词（的、了、在、是、the、a 等）
+    \item \textbf{向量化}：计算每个句子的 TF-IDF 向量。TF（词频）衡量词在句子中的重要性，IDF（逆文档频率）降低高频低信息量词汇的权重
+    \item \textbf{相似度矩阵}：计算句子两两之间的余弦相似度，构建 $N \times N$ 的邻接矩阵（对角线置零，消除自相似）
+    \item \textbf{PageRank 迭代}：以阻尼系数 $d = 0.85$ 进行迭代，直至分数收敛（容差 $10^{-6}$）。选取 Top-K 个句子，按原文顺序排列输出
+\end{enumerate}
+
+TextRank 的优势在于无监督、无需训练数据、计算速度快（纯 CPU 的 < 1 秒可处理单篇文章）。但其局限也很明显：摘要是原文片段的拼接，无法生成新的概括性语句；对文章结构的依赖性强，可能选到非核心句（如对话片段）。
+
+\subsection{LLM 生成式摘要}
+
+本项目使用阿里通义千问系列模型 Qwen2.5:7B\cite{qwen}，通过 Ollama 在本地部署运行。Qwen2.5 基于 Transformer Decoder 架构，具有 3584 维嵌入、32K 上下文窗口，支持中英双语。模型以 Q4\_K\_M 量化格式运行，占用约 4.7GB 显存，在 NVIDIA RTX 4070（8GB 显存）上推理流畅。
+
+生成式摘要的工作原理是：通过精心设计的 System Prompt 引导模型阅读原文，然后自回归式地生成摘要文本。与抽取式不同，LLM 可以理解语义、归纳要点、重新组织语言，生成更接近人工撰写的摘要。
+
+为了让一次 LLM 调用同时完成多项任务，我们设计了结构化 JSON 输出的 Prompt 策略：System Prompt 要求模型输出包含 \texttt{category}（分类）、\texttt{one\_sentence}（一句话摘要）、\texttt{short}（约 100 字摘要）和 \texttt{long}（约 200 字摘要）的 JSON 对象。输入正文截断至前 3000 字符——既保留足够上下文供模型理解，又避免超出上下文窗口。temperature 设为 0.3，在创造性和确定性之间取得平衡。
+
+\subsection{ROUGE 评估指标}
+
+ROUGE（Recall-Oriented Understudy for Gisting Evaluation）\cite{rouge} 是自动文本摘要领域最广泛使用的评估指标。本项目使用 ROUGE-L 变体——基于最长公共子序列（Longest Common Subsequence, LCS）计算生成摘要与人工参考摘要之间的匹配度：
+
+\begin{equation}
+R_{LCS} = \frac{LCS(X, Y)}{|Y|}, \quad
+P_{LCS} = \frac{LCS(X, Y)}{|X|}, \quad
+F_{LCS} = \frac{2 \cdot R_{LCS} \cdot P_{LCS}}{R_{LCS} + P_{LCS}}
+\end{equation}
+
+其中 $X$ 为生成摘要，$Y$ 为参考摘要。需要注意的是，中文文本需要先经过 jieba 分词后再计算 ROUGE——因为标准 ROUGE 实现基于英文的空格分词逻辑，中文词之间没有天然分隔。
+
+\subsection{正文提取}
+
+正文提取采用 trafilatura\cite{trafilatura}——一个现代的 Python Web 内容提取库。它能够自动识别网页中的正文区域，过滤导航栏、广告、推荐链接等噪声。选择 trafilatura 而非更流行的 newspaper3k，是因为后者及其依赖（feedparser）在 Python 3.13 下存在 sgmllib 兼容问题。
+
+RSS 解析直接使用 lxml.etree 解析 XML，支持 RSS 2.0 和 Atom 两种格式，避免了 feedparser 在 Python 3.13 下的相同兼容问题。
+
+% ============================================================
+\section{系统设计}
+% ============================================================
+
+\subsection{系统架构}
+
+系统采用分层架构设计，自底向上分为数据层、业务逻辑层和表现层，如图~\ref{fig:architecture} 所示。
+
+\begin{figure}[H]
+\centering
+\fbox{\begin{minipage}{0.85\textwidth}
+\small
+\centering
+\textbf{表现层} \quad Streamlit Web UI \\
+[4pt]
+\rule{0.8\textwidth}{0.3pt} \\
+[4pt]
+\textbf{管道层} \quad Pipeline（抓取→摘要→入库） \\
+[4pt]
+\rule{0.8\textwidth}{0.3pt} \\
+[4pt]
+\textbf{业务层} \quad Fetcher（HN API / 36kr RSS）\quad
+                 Summarizer（TextRank / LLM） \\
+[4pt]
+\rule{0.8\textwidth}{0.3pt} \\
+[4pt]
+\textbf{数据层} \quad SQLite（articles 表 + summaries 表）
+\end{minipage}}
+\caption{系统架构分层图}
+\label{fig:architecture}
+\end{figure}
+
+\subsection{模块划分}
+
+系统共包含 6 个模块，文件结构和职责如表~\ref{tab:modules} 所示。
+
+\begin{table}[H]
+\centering
+\caption{模块划分与职责}
+\label{tab:modules}
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{模块} & \textbf{文件} & \textbf{职责} \\
+\midrule
+config    & config.py           & 全局配置（模型名、信息源、分类标签、DB 路径） \\
+fetcher   & hackernews.py / rss\_36kr.py & 信息源抓取 + 正文提取 \\
+summarizer & textrank.py / llm\_summarizer.py & TextRank 自实现 + LLM 摘要生成 \\
+storage   & db.py               & SQLite 持久化，CRUD 操作 \\
+pipeline  & pipeline.py         & 每日流水线：（1）抓取→入库，（2）摘要→入库 \\
+ui        & main.py             & Streamlit 4 页 Web 界面 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{数据库设计}
+
+数据库使用 SQLite，包含两张核心表，通过 \texttt{article\_id} 外键关联。
+
+\textbf{articles 表}存储原始文章：id（主键）、source（来源名称）、title、url、content（正文）、raw\_summary（RSS 简介）、fetch\_date（抓取日期）、fetched\_at（抓取时间戳）。UNIQUE(source, url) 约束防止同一文章重复入库。
+
+\textbf{summaries 表}存储摘要结果：id（主键）、article\_id（外键，UNIQUE）、category（分类标签）、one\_sentence、short、long（LLM 三种长度摘要）、textrank（TextRank 抽取式摘要）、created\_at。通过 LEFT JOIN 可在一次查询中同时获取文章和摘要信息。
+
+\subsection{数据流}
+
+完整的数据流如下：系统从 Hacker News API 和 36氪 RSS 两个信息源抓取文章 → trafilatura 提取正文 → 存入 articles 表 → Pipeline 触发摘要生成 → TextRank 抽取关键句 + LLM 生成三种长度摘要并分类 → 存入 summaries 表 → Streamlit 前端按日期/分类读取展示。
+
+% ============================================================
+\section{关键实现细节}
+% ============================================================
+
+\subsection{TextRank 自实现}
+
+与直接调用 sumy 等现成库不同，本项目从零实现了 TextRank 算法，以体现对算法原理的深入理解。核心实现在 \texttt{textrank.py} 中，约 80 行代码，涵盖分句、分词、TF-IDF 向量化、余弦相似度矩阵构建和 PageRank 迭代五个步骤。
+
+TF-IDF 向量化是关键设计选择。如果仅使用词频（TF）向量，高频但低信息量的停顿词（如“的”“了”）会主导相似度计算；加入 IDF 权重后，这些词被大幅降权，真正承载语义的实词（如“Transformer”“摘要”“模型”）在相似度计算中占据主导。
+
+PageRank 迭代设置阻尼系数 $d=0.85$（经典值），收敛容差 $10^{-6}$，最大迭代次数 100。在 20 句以内的短文本上，通常 10-20 次迭代即可收敛。
+
+\subsection{LLM Prompt 设计}
+
+一次 LLM 调用同时完成\textbf{分类}和\textbf{三种长度摘要}，避免了多次调用带来的延迟和 token 浪费。System Prompt 明确指定输出格式为 JSON，并约束类别范围（AI/科技、创业/商业、编程/技术、其他）。在解析阶段，首先用正则提取 JSON 代码块（兼容 LLM 偶尔输出的 \texttt{```json ... ```} 包裹），再通过规范化步骤将非标准分类修正为“其他”。
+
+\subsection{数据抓取策略}
+
+HN API 的抓取流程：获取 /topstories.json → 取前 30 个 ID → 逐个查询 /item/\{id\}.json → 提取 title 和 url → trafilatura 抓取正文。每篇文章独立抓取，单篇失败不影响其他。
+
+36kr RSS 的抓取流程：GET 请求获取 RSS XML → lxml.etree 解析 → 提取 \texttt{<item>} 元素中的 title、link、description → trafilatura 抓取正文。设计了降级策略：如果正文提取失败但 RSS 简介 ≥ 100 字，则用简介替代正文，保证覆盖率。
+
+正文质量通过长度阈值过滤：英文文章 ≥ 100 字符，中文文章 ≥ 50 字符——因为中文信息密度更高，同样的信息量需要更少的字符数。
+
+% ============================================================
+\section{实验与评估}
+% ============================================================
+
+为全面评估两种摘要方案的效果，我们设计了三种评估方式：ROUGE-L 自动评估（20 篇文章）、人工多维评分（5 篇文章）、分类准确率验证（20 篇文章）。人工参考摘要由项目组成员独立撰写，确保评估的客观性。
+
+\subsection{ROUGE-L 评估}
+
+在 20 篇文章上，以人工撰写的参考摘要为 ground truth，计算 TextRank 和 LLM 生成式摘要的 ROUGE-L F1 分数。
+
+\begin{table}[H]
+\centering
+\caption{ROUGE-L 评估结果（20 篇文章）}
+\label{tab:rouge}
+\begin{tabular}{lcc}
+\toprule
+\textbf{方案} & \textbf{文章数} & \textbf{ROUGE-L F1} \\
+\midrule
+TextRank 抽取式   & 20 & 0.1322 \\
+LLM 生成式（100字） & 20 & \textbf{0.3571} \\
+LLM 生成式（200字） & 20 & 0.2562 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+结果分析：
+
+\begin{enumerate}[label=(\arabic*),nosep]
+    \item \textbf{LLM 显著优于 TextRank}：LLM 100 字摘要的 ROUGE-L F1（0.3571）是 TextRank（0.1322）的 2.7 倍。这是因为抽取式摘要直接使用原文原句，而人工参考摘要重新组织了语言——即使信息覆盖到位，n-gram 层面的重叠度也天然偏低。
+    \item \textbf{200 字摘要 ROUGE-L 反而更低}：LLM 200 字摘要的 ROUGE-L（0.2562）低于 100 字（0.3571）。这是 ROUGE 指标本身的局限性——更长文本与参考摘要的精确匹配概率更低。实际上，200 字摘要包含更多细节，在信息覆盖度上优于 100 字摘要。
+    \item \textbf{ROUGE 的适用边界}：这一结果也说明 ROUGE 不应作为摘要质量的唯一指标，需结合人工评估综合判断。
+\end{enumerate}
+
+\subsection{人工评分}
+
+选取 5 篇文章，从流畅性（Fluency）、信息覆盖度（Coverage）、简洁性（Conciseness）三个维度进行 1-5 分人工评分。
+
+\begin{table}[H]
+\centering
+\caption{人工评分结果（5 篇文章，1-5 分）}
+\label{tab:human}
+\begin{tabular}{lccc}
+\toprule
+\textbf{维度} & \textbf{TextRank} & \textbf{LLM} & \textbf{LLM 优势} \\
+\midrule
+流畅性     & \textbf{5.0} & 4.6 & $-$8\% \\
+信息覆盖度 & 4.0 & \textbf{4.8} & +20\% \\
+简洁性     & 4.4 & \textbf{4.8} & +9\% \\
+\midrule
+综合均分   & 4.47 & \textbf{4.73} & +6\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+结果分析：
+
+\begin{enumerate}[label=(\arabic*),nosep]
+    \item \textbf{TextRank 流畅性满分}：因为它直接摘抄原文句子，句子本身天然通顺。但这恰恰暴露了抽取式摘要的本质——它不生产语言，只搬运语言。
+    \item \textbf{LLM 信息覆盖度明显领先}（4.8 vs 4.0）：TextRank 的一个代表性失败案例是，在 36氪 WAVES2026 峰会报道中，它抽取了主持人对话片段而非核心观点；而 LLM 成功归纳了“投早投小”“技术路线选择”“资本周期错配”等关键议题。
+    \item \textbf{人工评分差距远小于 ROUGE 差距}：人工综合评分 LLM 仅领先 6\%，而 ROUGE 领先 170\%。这说明 ROUGE 作为表面匹配指标，可能低估了抽取式摘要的实际可读性。
+\end{enumerate}
+
+\subsection{分类准确率}
+
+从四分类中各选 5 篇，共 20 篇文章，人工验证 LLM 分类的准确性。
+
+\begin{table}[H]
+\centering
+\caption{分类准确率（20 篇文章）}
+\label{tab:category}
+\begin{tabular}{lccc}
+\toprule
+\textbf{类别} & \textbf{样本数} & \textbf{正确数} & \textbf{准确率} \\
+\midrule
+AI/科技   & 5 & 5 & 100\% \\
+创业/商业 & 5 & 5 & 100\% \\
+编程/技术 & 5 & 5 & 100\% \\
+其他      & 5 & 5 & 100\% \\
+\midrule
+总计      & 20 & 20 & \textbf{100\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+20 篇文章全部正确分类，说明：（1）预设的四分类标签与这批文章的领域分布高度契合；（2）Qwen2.5:7B 对科技类新闻的语义理解能力足以胜任该分类任务。
+
+\subsection{方案对比总结}
+
+\begin{table}[H]
+\centering
+\caption{TextRank vs LLM 方案全面对比}
+\label{tab:comparison}
+\small
+\begin{tabular}{lcc}
+\toprule
+\textbf{维度} & \textbf{TextRank} & \textbf{LLM 生成式} \\
+\midrule
+实现方式   & 自实现 80 行 & Prompt 工程 \\
+推理速度   & $<$1 秒/篇  & 3-8 秒/篇 \\
+ROUGE-L F1 & 0.1322      & \textbf{0.3571} \\
+人工评分   & 4.47        & \textbf{4.73} \\
+硬件依赖   & 无          & GPU（8GB 显存） \\
+能否离线   & 是          & 需加载模型 \\
+语言能力   & 仅抽取原文  & 理解+归纳+翻译 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+综合评估，LLM 生成式在所有质量指标上均优于 TextRank，代价是推理速度较慢和硬件依赖。实际部署中可考虑混合策略：对时效性要求高的场景使用 TextRank 快速出摘要；对质量要求高的场景使用 LLM 精加工。
+
+% ============================================================
+\section{总结与心得}
+% ============================================================
+
+\subsection{项目收获}
+
+通过本项目，我们完整体验了 NLP 应用从数据获取、算法实现、前端展示到量化评估的全流程。
+
+在实践中深刻理解了抽取式摘要与生成式摘要的本质差异——这不是简单的“好坏”之分，而是\textbf{忠实度}与\textbf{可读性}之间的权衡。TextRank 绝不编造，但缺乏概括；LLM 流畅智能，但可能产生幻觉。这一认知远比课堂上的理论讲解来得深刻。
+
+Prompt Engineering 被证明是 NLP 工程实践中的核心技能——一个精心设计的 System Prompt 能让一次 API 调用同时完成分类和三种长度摘要，大幅减少 token 消耗和响应延迟。结构化 JSON 输出让 LLM 从“聊天工具”变成了“可编程组件”。
+
+\subsection{遇到的技术问题}
+
+\begin{enumerate}[label=(\arabic*),nosep]
+    \item \textbf{Python 3.13 兼容性}：newspaper3k 依赖的 feedparser 在 Python 3.13 下因 sgmllib 移除而无法导入。解决方案是将正文提取迁移到 trafilatura，RSS 解析改用 lxml.etree 直接处理 XML，完全消除了对 feedparser 的依赖。
+    \item \textbf{Ollama Python SDK 故障}：ollama 官方 Python 库在 Windows 环境下返回 HTTP 502 错误，但通过 curl 直接调用 API 正常。排查后改用 requests 库直接调用 Ollama 的 HTTP API，问题解决。
+    \item \textbf{数据库路径问题}：Streamlit 运行时的 CWD 与模块所在目录不一致，导致 SQLite 数据库被创建到了错误的位置。解决方案是将 DB\_PATH 改为基于 config.py 文件位置的绝对路径，确保无论从哪里启动，数据库都在固定位置。
+\end{enumerate}
+
+\subsection{未来改进方向}
+
+\begin{enumerate}[label=(\arabic*),nosep]
+    \item \textbf{扩展信息源}：接入微信公众号、知乎、GitHub Trending 等渠道，扩大覆盖面
+    \item \textbf{个性化推荐}：基于用户阅读历史和反馈，调整摘要详略和推送频率
+    \item \textbf{推送能力}：增加邮件/微信推送，实现真正的“订阅”闭环
+    \item \textbf{模型升级}：使用更大参数量的模型（如 Qwen2.5:14B）或云端 API（GPT/Claude）进一步提升摘要质量
+    \item \textbf{多模态摘要}：支持视频/播客转写后的摘要
+\end{enumerate}
+
+% ============================================================
+% 参考文献
+% ============================================================
+\begin{thebibliography}{99}
+
+\bibitem{textrank}
+Mihalcea R, Tarau P.
+\textit{TextRank: Bringing Order into Text.}
+Proceedings of EMNLP, 2004.
+
+\bibitem{pagerank}
+Page L, Brin S, Motwani R, Winograd T.
+\textit{The PageRank Citation Ranking: Bringing Order to the Web.}
+Stanford InfoLab, 1999.
+
+\bibitem{rouge}
+Lin C Y.
+\textit{ROUGE: A Package for Automatic Evaluation of Summaries.}
+Proceedings of ACL Workshop on Text Summarization, 2004.
+
+\bibitem{transformer}
+Vaswani A, Shazeer N, Parmar N, et al.
+\textit{Attention Is All You Need.}
+Proceedings of NeurIPS, 2017.
+
+\bibitem{qwen}
+Qwen Team, Alibaba Cloud.
+\textit{Qwen2.5 Technical Report.}
+2025.
+
+\bibitem{trafilatura}
+Barbaresi A.
+\textit{Trafilatura: A Web Scraping Library and Command-Line Tool for Text Discovery and Extraction.}
+Proceedings of ACL: System Demonstrations, 2021.
+
+\end{thebibliography}
+
+\end{document}

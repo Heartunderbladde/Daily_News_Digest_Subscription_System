@@ -1,0 +1,418 @@
+{
+  "details": [
+    {
+      "article_id": 2,
+      "title": "An entire Herculaneum scroll has been read for the first time",
+      "source": "Hacker News",
+      "textrank_rougeL": {
+        "rougeL_precision": 0.0092,
+        "rougeL_recall": 0.2,
+        "rougeL_f1": 0.0175
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 0.5,
+        "rougeL_recall": 0.2,
+        "rougeL_f1": 0.2857
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 0.5,
+        "rougeL_recall": 0.0909,
+        "rougeL_f1": 0.1538
+      }
+    },
+    {
+      "article_id": 4,
+      "title": "What happened after 2k people tried to hack my AI assistant",
+      "source": "Hacker News",
+      "textrank_rougeL": {
+        "rougeL_precision": 0.1026,
+        "rougeL_recall": 0.2667,
+        "rougeL_f1": 0.1481
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 0.3333,
+        "rougeL_recall": 0.1333,
+        "rougeL_f1": 0.1905
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 0.4167,
+        "rougeL_recall": 0.1923,
+        "rougeL_f1": 0.2632
+      }
+    },
+    {
+      "article_id": 5,
+      "title": "The 'papers, please' era of the internet will decimate your privacy",
+      "source": "Hacker News",
+      "textrank_rougeL": {
+        "rougeL_precision": 0,
+        "rougeL_recall": 0,
+        "rougeL_f1": 0
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 0,
+        "rougeL_recall": 0,
+        "rougeL_f1": 0
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 0.0,
+        "rougeL_recall": 0.0,
+        "rougeL_f1": 0.0
+      }
+    },
+    {
+      "article_id": 8,
+      "title": "IBM debuts sub-1 nanometer chip technology",
+      "source": "Hacker News",
+      "textrank_rougeL": {
+        "rougeL_precision": 0.0882,
+        "rougeL_recall": 0.3529,
+        "rougeL_f1": 0.1412
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 1.0,
+        "rougeL_recall": 0.1176,
+        "rougeL_f1": 0.2105
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 0.6364,
+        "rougeL_recall": 0.2593,
+        "rougeL_f1": 0.3684
+      }
+    },
+    {
+      "article_id": 9,
+      "title": "Un-0: Generating Images with Coupled Oscillators",
+      "source": "Hacker News",
+      "textrank_rougeL": {
+        "rougeL_precision": 0.0,
+        "rougeL_recall": 0.0,
+        "rougeL_f1": 0.0
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 0.0,
+        "rougeL_recall": 0.0,
+        "rougeL_f1": 0.0
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 0.0,
+        "rougeL_recall": 0.0,
+        "rougeL_f1": 0.0
+      }
+    },
+    {
+      "article_id": 11,
+      "title": "Doing a masters while working in Spain",
+      "source": "Hacker News",
+      "textrank_rougeL": {
+        "rougeL_precision": 0.0,
+        "rougeL_recall": 0.0,
+        "rougeL_f1": 0.0
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 1.0,
+        "rougeL_recall": 0.25,
+        "rougeL_f1": 0.4
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 1.0,
+        "rougeL_recall": 0.1111,
+        "rougeL_f1": 0.2
+      }
+    },
+    {
+      "article_id": 12,
+      "title": "Why are we so obsessed with lawns?",
+      "source": "Hacker News",
+      "textrank_rougeL": {
+        "rougeL_precision": 0.0,
+        "rougeL_recall": 0.0,
+        "rougeL_f1": 0.0
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 1.0,
+        "rougeL_recall": 0.5,
+        "rougeL_f1": 0.6667
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 1.0,
+        "rougeL_recall": 0.2,
+        "rougeL_f1": 0.3333
+      }
+    },
+    {
+      "article_id": 13,
+      "title": "An oral history of Bank Python (2021)",
+      "source": "Hacker News",
+      "textrank_rougeL": {
+        "rougeL_precision": 0.04,
+        "rougeL_recall": 0.1429,
+        "rougeL_f1": 0.0625
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 0.375,
+        "rougeL_recall": 0.4286,
+        "rougeL_f1": 0.4
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 0.4167,
+        "rougeL_recall": 0.4167,
+        "rougeL_f1": 0.4167
+      }
+    },
+    {
+      "article_id": 14,
+      "title": "The Doorman's Fallacy in action",
+      "source": "Hacker News",
+      "textrank_rougeL": {
+        "rougeL_precision": 0.0,
+        "rougeL_recall": 0.0,
+        "rougeL_f1": 0.0
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 0,
+        "rougeL_recall": 0,
+        "rougeL_f1": 0
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 0,
+        "rougeL_recall": 0,
+        "rougeL_f1": 0
+      }
+    },
+    {
+      "article_id": 17,
+      "title": "Zig's new bitCast semantics and LLVM back end improvements",
+      "source": "Hacker News",
+      "textrank_rougeL": {
+        "rougeL_precision": 0.0,
+        "rougeL_recall": 0.0,
+        "rougeL_f1": 0.0
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 0.6,
+        "rougeL_recall": 0.25,
+        "rougeL_f1": 0.3529
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 0.5714,
+        "rougeL_recall": 0.1081,
+        "rougeL_f1": 0.1818
+      }
+    },
+    {
+      "article_id": 18,
+      "title": "The last Romans are still around",
+      "source": "Hacker News",
+      "textrank_rougeL": {
+        "rougeL_precision": 0.0112,
+        "rougeL_recall": 1.0,
+        "rougeL_f1": 0.0222
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 0,
+        "rougeL_recall": 0,
+        "rougeL_f1": 0
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 0,
+        "rougeL_recall": 0,
+        "rougeL_f1": 0
+      }
+    },
+    {
+      "article_id": 20,
+      "title": "You can't unit test for taste",
+      "source": "Hacker News",
+      "textrank_rougeL": {
+        "rougeL_precision": 0.0,
+        "rougeL_recall": 0.0,
+        "rougeL_f1": 0.0
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 0.2,
+        "rougeL_recall": 0.25,
+        "rougeL_f1": 0.2222
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 0.6,
+        "rougeL_recall": 0.3333,
+        "rougeL_f1": 0.4286
+      }
+    },
+    {
+      "article_id": 21,
+      "title": "中科闻歌开盘暴涨81%，北京再增一家硬科技IPO",
+      "source": "36氪",
+      "textrank_rougeL": {
+        "rougeL_precision": 0.4286,
+        "rougeL_recall": 0.25,
+        "rougeL_f1": 0.3158
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 0.8333,
+        "rougeL_recall": 0.4167,
+        "rougeL_f1": 0.5556
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 0.9,
+        "rougeL_recall": 0.36,
+        "rougeL_f1": 0.5143
+      }
+    },
+    {
+      "article_id": 22,
+      "title": "历经13年，二手车交易平台大搜车终于登陆纳斯达克",
+      "source": "36氪",
+      "textrank_rougeL": {
+        "rougeL_precision": 0.5,
+        "rougeL_recall": 0.1818,
+        "rougeL_f1": 0.2667
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 1.0,
+        "rougeL_recall": 0.1818,
+        "rougeL_f1": 0.3077
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 0.5,
+        "rougeL_recall": 0.3636,
+        "rougeL_f1": 0.4211
+      }
+    },
+    {
+      "article_id": 23,
+      "title": "戴宗宏和他的「工业世界模型」：一人两周，干完百人级定制化“累活”",
+      "source": "36氪",
+      "textrank_rougeL": {
+        "rougeL_precision": 1.0,
+        "rougeL_recall": 1.0,
+        "rougeL_f1": 1.0
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 1.0,
+        "rougeL_recall": 1.0,
+        "rougeL_f1": 1.0
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 1.0,
+        "rougeL_recall": 0.1111,
+        "rougeL_f1": 0.2
+      }
+    },
+    {
+      "article_id": 24,
+      "title": "年入27亿，一颗中国糖果拿捏「美国味」",
+      "source": "36氪",
+      "textrank_rougeL": {
+        "rougeL_precision": 0.2,
+        "rougeL_recall": 0.2857,
+        "rougeL_f1": 0.2353
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 0.8,
+        "rougeL_recall": 0.5714,
+        "rougeL_f1": 0.6667
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 0.3333,
+        "rougeL_recall": 0.2692,
+        "rougeL_f1": 0.2979
+      }
+    },
+    {
+      "article_id": 25,
+      "title": "主题圆桌：我们永远赞美冒险 更早、更小、更下水｜36氪WAVES2026新浪潮",
+      "source": "36氪",
+      "textrank_rougeL": {
+        "rougeL_precision": 0,
+        "rougeL_recall": 0,
+        "rougeL_f1": 0
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 1.0,
+        "rougeL_recall": 0.6667,
+        "rougeL_f1": 0.8
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 0.6667,
+        "rougeL_recall": 0.25,
+        "rougeL_f1": 0.3636
+      }
+    },
+    {
+      "article_id": 27,
+      "title": "8点1氪丨苹果宣布上调iPad及Mac价格；黄仁勋计划把50%或更多现金流返还股东；OpenAI发布首款AI芯片",
+      "source": "36氪",
+      "textrank_rougeL": {
+        "rougeL_precision": 0.1667,
+        "rougeL_recall": 0.125,
+        "rougeL_f1": 0.1429
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 0.875,
+        "rougeL_recall": 0.4375,
+        "rougeL_f1": 0.5833
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 0.9,
+        "rougeL_recall": 0.2727,
+        "rougeL_f1": 0.4186
+      }
+    },
+    {
+      "article_id": 29,
+      "title": "美光的好财报，黄金的坏消息",
+      "source": "36氪",
+      "textrank_rougeL": {
+        "rougeL_precision": 0.2222,
+        "rougeL_recall": 0.2222,
+        "rougeL_f1": 0.2222
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 0.6667,
+        "rougeL_recall": 0.2222,
+        "rougeL_f1": 0.3333
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 0.8,
+        "rougeL_recall": 0.2222,
+        "rougeL_f1": 0.3478
+      }
+    },
+    {
+      "article_id": 44,
+      "title": "We All Depend on Open Source. We Will Defend It Together",
+      "source": "Hacker News",
+      "textrank_rougeL": {
+        "rougeL_precision": 0.0381,
+        "rougeL_recall": 0.3636,
+        "rougeL_f1": 0.069
+      },
+      "llm_short_rougeL": {
+        "rougeL_precision": 1.0,
+        "rougeL_recall": 0.0909,
+        "rougeL_f1": 0.1667
+      },
+      "llm_long_rougeL": {
+        "rougeL_precision": 0.75,
+        "rougeL_recall": 0.125,
+        "rougeL_f1": 0.2143
+      }
+    }
+  ],
+  "summary": {
+    "textrank": {
+      "count": 20,
+      "mean_rougeL_f1": 0.1322
+    },
+    "llm_short": {
+      "count": 20,
+      "mean_rougeL_f1": 0.3571
+    },
+    "llm_long": {
+      "count": 20,
+      "mean_rougeL_f1": 0.2562
+    }
+  }
+}
