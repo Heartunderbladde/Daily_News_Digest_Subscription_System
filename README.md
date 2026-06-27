@@ -35,7 +35,7 @@ ollama serve
 
 ```bash
 cd news_summary
-streamlit run main.py
+streamlit run news_summary/main.py
 ```
 
 浏览器打开 `http://localhost:8501`。
@@ -80,7 +80,24 @@ python news_summary/scheduler/daily.py
 | 正文提取 | trafilatura |
 | RSS 解析 | lxml |
 | 中文分词 | jieba |
-| RSS 解析 | feedparser |
 | 评估 | rouge-score |
 
 涉及课程知识：词向量、TF-IDF、TextRank、Prompt Engineering、结构化输出
+
+## 课程交付物
+
+| 交付物 | 位置 |
+|--------|------|
+| 完整系统代码 | `news_summary/`（14 个 `.py`，6 模块） |
+| ROUGE-L 评估（20 篇） | `rouge_results.json` |
+| 人工评分（5 篇） | `human_eval_5.json` |
+| 分类准确率验证（20 篇） | `category_accuracy.json` |
+| 人工参考摘要（20 篇） | `reference_summaries_template.json` |
+| Web 应用（3 天数据） | `streamlit run news_summary/main.py` |
+| 课程设计报告（LaTeX） | `report.tex` |
+| 答辩 PPT 大纲 | `PPT详细大纲.md` |
+| 答辩演讲稿 | `答辩演讲稿.md` |
+| Vibe Coding 记录 | `Vibe_Coding_Prompt记录.md` |
+| Vibe Coding 反思 | `Vibe_Coding_开发反思.md` |
+| 演示视频讲稿 | `演示视频演讲稿.md` |
+| 术语表 & 架构决策 | `CONTEXT.md` + `docs/adr/` |

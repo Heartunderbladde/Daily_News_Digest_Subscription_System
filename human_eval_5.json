@@ -102,8 +102,8 @@
     "scores": {
       "textrank": {
         "fluency": "5",
-        "coverage": "5",
-        "conciseness": "5",
+        "coverage": "2",
+        "conciseness": "3",
         "notes": "简明扼要，很吸引眼球"
       },
       "llm": {

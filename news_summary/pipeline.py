@@ -40,26 +40,38 @@ def fetch_all() -> int:
     return inserted
 
 
-def summarize_all_pending(model: str = None) -> int:
-    """对所有未生成摘要的文章，运行 TextRank + LLM 摘要。返回处理数。"""
+def summarize_all_pending(model: str = None, progress_callback=None) -> int:
+    """
+    对所有未生成摘要的文章，运行 TextRank + LLM 摘要。
+
+    progress_callback: 可选，每处理一篇调用一次，签名为 callback(idx, total, title, status)
+    """
     conn = get_connection()
     articles = get_articles_without_summary(conn)
+    total = len(articles)
     processed = 0
 
-    for art in articles:
+    for idx, art in enumerate(articles):
         content = art.get("content") or art.get("raw_summary") or ""
         title = art.get("title", "")
 
         if not content or len(content) < 50:
+            if progress_callback:
+                progress_callback(idx + 1, total, title, "跳过（内容太短）")
             continue
 
         # TextRank 抽取式
         textrank_result = textrank_summarize(content)
 
+        if progress_callback:
+            progress_callback(idx + 1, total, title, "生成中...")
+
         # LLM 生成式（分类 + 三种长度摘要）
         llm_result = summarize_article(title, content, model=model)
 
         if llm_result is None:
+            if progress_callback:
+                progress_callback(idx + 1, total, title, "失败（LLM 无响应）")
             continue
 
         upsert_summary(
@@ -73,9 +85,12 @@ def summarize_all_pending(model: str = None) -> int:
         )
         processed += 1
 
+        if progress_callback:
+            progress_callback(idx + 1, total, title, "完成")
+
     conn.commit()
     conn.close()
-    print(f"[Pipeline] 摘要生成完成，处理 {processed} 篇")
+    print(f"[Pipeline] 摘要生成完成，处理 {processed}/{total} 篇")
     return processed
 
 
